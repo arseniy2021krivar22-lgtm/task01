@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+int get_tails(int number) {
+	int tail = 0;
+	int head = 0;
+
+	for (int i = 0; i < number; i++) {
+		if (rand() % 2 == 1) {
+			tail++;
+		}
+		
+	}
+	return tail;
+
+}
+int main() {
+	int number = 1000;
+	int head, tail;
+	tail = get_tails(number);
+	head = number - tail;
+	cout << "heads - " << head << ",tails - " << tail << endl;
+
+	return 0;
+}
