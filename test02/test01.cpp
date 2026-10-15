@@ -5,15 +5,17 @@ int get_tails(int number) {
 	int head = 0;
 
 	for (int i = 0; i < number; i++) {
-		if (rand() % 2 == 1) {
+		int rnd = rand() % 20;
+		if (rnd < 13) {
 			tail++;
 		}
-		
+
 	}
 	return tail;
 
 }
 int main() {
+	srand(time(NULL));
 	int number = 1000;
 	int head, tail;
 	tail = get_tails(number);
