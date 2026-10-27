@@ -30,19 +30,40 @@ int get_min_elememt(int* array, int size) {
 	return min;
 }
 double get_geometrical_avg(int* array, int size) {
-	/*int avg = INT_MAX;
+	int p = 1;
 	for (int i = 0; i < size; i++) {
-		if (min > array[i]) {
-			min = array[i];
-		}
-	}*/
-	return 0.0;
+		p *= array[i];
+	}
+	return pow(p,1.0 / size);
 }
 double get_arithmetical_avg(int* array, int size) {
+	double sum = 0;
+
 	for (int i = 0; i < size; i++) {
-		int sum;
-
+		sum += array[i];
 	}
-	return 0.0;
 
+	return sum / size;
+
+}
+bool binare_search(int* array, int size,int value) {
+
+	int first = 0;
+	int last = size - 1;
+
+	while (first <= last  ) {
+		int middle = (first + last) / 2;
+		if (array[middle] == value) {
+			return true;
+		}
+		else if (array[middle] < value) {
+			first = middle + 1;
+		}
+		else {
+			last = middle - 1;
+		}
+	}
+
+
+	return false;
 }
